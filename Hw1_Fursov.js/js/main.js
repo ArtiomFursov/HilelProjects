@@ -1,0 +1,12 @@
+let count = 7;
+console. log('Значение:',count);
+console. log('Квадрат этого значения:',count**2);
+console. log('Куб этого значения:',count**3);
+let celsius;
+let fahrenheit;
+celsius = 25;
+fahrenheit = celsius * 9 / 5 + 32;
+console. log(celsius+'\u00B0C равно', fahrenheit+'\u00B0F');
+fahrenheit = 73;
+celsius = (fahrenheit - 32) * 5 / 9;
+console. log(fahrenheit+'\u00B0F равно',celsius+'\u00B0C');
