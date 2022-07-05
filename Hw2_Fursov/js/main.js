@@ -16,20 +16,20 @@ if(Number(lastName)){
 console.log(lastName);
 let mail = prompt('Your Email');
 mail = mail.replace(/\s+/g, '');
+mail = mail.toLowerCase();
 // let firstSymbolMail = mail.startsWith('@');
 // let lastSymbolMail = mail.endsWith('@');
 // let symbolHasntMail = mail.includes('@');
 if(mail.startsWith('@')){
 console.log( `not valid email (symbol @ find in first place)`);
-mail = `not valid email (symbol @ find in first place)`;    
+mail = `not valid email <b>${mail}</b> (symbol @ find in first place)`;    
 }
 else if(mail.endsWith('@')){
-    alert( `not valid email (symbol @ find in last place)`);
-    mail = `not valid email (symbol @ find in last place)`;
+    mail = `not valid email <b>${mail}</b> (symbol @ find in last place)`;
 }
-else if(mail.includes('@')===false){
+else if(!mail.includes('@')){
     console.log( `not valid email (symbol @ not exist)`);
-    mail = `not valid email (symbol @ not exist)`;
+    mail = `not valid email <b>${mail}</b> (symbol @ not exist)`;
 }
 else{
   console.log(mail);  
