@@ -21,16 +21,6 @@ first = second;
 second = res; 
 console.log(res);
 }
-// let stairs = prompt('number');
-// let numK =1;
-// console.log(numK);
-// for(let i = 1; i<=1; i++){
-//  for(let k = 1;k<=num-1;k++){
-//  numK=numK+''+(k+1);
-//  let numberNumk = parseInt(numK);
-//  console.log(numberNumk); 
-//  }
-// }
 let stairs = prompt('enter the number');
 stairs = stairs.replace(/\s+/g, '');
 stairs = parseInt(stairs);
