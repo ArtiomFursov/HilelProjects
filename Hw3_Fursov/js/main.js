@@ -7,20 +7,26 @@ if(isNaN(num)){
 }
 let first = 0;
 let second = 1;
-let res;
 if (num<2){
     console.log(first);
 }
- else if(num>=2){
-    console.log(first);
-    console.log(second);
-}
+//  else if(num>=2){
+//     console.log(first+","+second+",");
+//     // console.log(second);
+// }
+let x= "";
 for (let i=0;i<=num-3;i++){
 res = first + second;
 first = second;
 second = res; 
-console.log(res);
+x=x+res+",";
 }
+if(x.endsWith(',')){
+x=x.replace(/,(?![^,]*,)/m, '');
+}
+
+console.log(`0,1,${x}`);
+
 let stairs = prompt('enter the number');
 stairs = stairs.replace(/\s+/g, '');
 stairs = parseInt(stairs);
@@ -38,4 +44,3 @@ for(let i =0 ;i<stairs;i++){
     }
     console.log(line);
 }
-
