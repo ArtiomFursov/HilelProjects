@@ -39,6 +39,9 @@ dateOfBirth = dateOfBirth.replace(/\s+/g, '');
 dateOfBirth = parseInt(dateOfBirth);
 let Year = 2022;
 let age = Year - dateOfBirth;
+if(isNaN){
+age = 'not valiable'
+};
 console.log(`Age ${age}`);
 document.write(`
 <ul class="List">
