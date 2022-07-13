@@ -37,22 +37,40 @@ let new_Res_array =[...new Set(result_Equal)];
 console.log(new_Res_array);
 //Fidning letter in the word
 let word = prompt('enter a word');
-word = toString(word);
-let letter = prompt('enter a letter');
-letter=toString(letter);
+let str =true;
+
+for(let i=0;i<word.length;i++){
+    if(Number(word[i])>0){
+        str===false;
+        word = alert('Not a string');
+        do{
+            word = prompt('Enter a string');
+        }while(str===false);
+    }
+}
+let letter = prompt('Enter a letter');
 let count=0;
 for(let i=0;i<word.length;i++){
 if(word[i]===letter){
     count++;
  }
+
 }
 if(letter.length>1){
     letter=alert(`it's not a letter`);
 }
+else if (word.includes(Number(word))){
+    word=alert('Use only letters');
+}
+ else if(Number(letter)){
+     letter=alert('Use a letter');
+ }
+ 
 else if(word.includes(letter)){
     console.log(`The string contains the following number of '${letter}' letter: ${count}`);
 
 }
+
 else{
     console.log(`this letter doesn't exist in this word`);
 }
