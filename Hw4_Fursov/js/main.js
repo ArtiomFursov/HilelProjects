@@ -40,7 +40,7 @@ let word = prompt('enter a word');
 let str =true;
 
 for(let i=0;i<word.length;i++){
-    if(Number(word[i])>0){
+    if(Number(word[i])>=0){
         str===false;
         word = alert('Not a string');
         do{
