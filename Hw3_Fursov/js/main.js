@@ -7,9 +7,7 @@ if(isNaN(num)){
 }
 let first = 0;
 let second = 1;
-if (num<2){
-    console.log(first);
-}
+
 //  else if(num>=2){
 //     console.log(first+","+second+",");
 //     // console.log(second);
@@ -21,12 +19,21 @@ first = second;
 second = res; 
 x=x+res+",";
 }
-if(x.endsWith(',')){
-x=x.replace(/,(?![^,]*,)/m, '');
+if (num===0){
+    console.log(first+'');
 }
-
-console.log(`0,1,${x}`);
-
+else if(num===1){
+    console.log(second+'');
+}
+else if(num===2){
+    console.log(first+','+second);
+}
+else if(num>2){
+    if(x.endsWith(',')){
+        x=x.replace(/,(?![^,]*,)/m, '');
+        }
+    console.log(`0,1,${x}`);
+}
 let stairs = prompt('enter the number');
 stairs = stairs.replace(/\s+/g, '');
 stairs = parseInt(stairs);
