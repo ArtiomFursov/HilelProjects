@@ -19,7 +19,6 @@ for(let i = 0; i < arr3.length; i++){
     if(!arr2[i]){
         arr3[i]=arr1[i];
     }
-
 }
 console.log(arr3);
 //Finding equal numbers 
