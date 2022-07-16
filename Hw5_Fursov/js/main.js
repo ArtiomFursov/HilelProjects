@@ -25,7 +25,7 @@ let palidnrome = function(word){
     if(res1!==res2){
         checking=false;
     }
-console.log(word+' = '+ checking);
+return console.log(word+' = '+ checking);
 }
 palidnrome();
 // sum of numbers 
