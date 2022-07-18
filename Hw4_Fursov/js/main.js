@@ -64,12 +64,10 @@ else if (word.includes(Number(word))){
  else if(Number(letter)){
      letter=alert('Use a letter');
  }
- 
 else if(word.includes(letter)){
     console.log(`The string contains the following number of '${letter}' letter: ${count}`);
 
 }
-
 else{
     console.log(`this letter doesn't exist in this word`);
 }
