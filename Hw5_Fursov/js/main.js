@@ -5,7 +5,6 @@ arr = [].concat(...arr);
 return arr;
 }
 console.log(concatenateArr(flattenArr));
-
 //Function which checks for palindrome
 let palidnrome = function(word){
     word=prompt('enter whe word');
