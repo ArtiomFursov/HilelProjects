@@ -71,7 +71,6 @@ game(5);
 game(6);
 
 
-// console.log(guessingGame());
 
 
 
