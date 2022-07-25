@@ -1,0 +1,19 @@
+img{
+    width: 220px;
+    height: 231px;
+}
+#books{
+border-collapse: collapse;
+  text-align: center;
+  margin: auto;
+  padding: 0;
+}
+#books th{
+  padding: 15px;
+  border: 1px solid black;
+}
+#books td{
+   padding: 15px;
+   border: 1px solid black;
+   
+}
