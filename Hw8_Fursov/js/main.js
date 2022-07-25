@@ -36,15 +36,21 @@ const books = [
     }
 ];
 let k = '<tbody>';
-for (i = 0; i < books.length; i++) {
-    k+= '<tr>';
-    k+=`<tr>`
-    k+=`<td> <img src="${books[i].path}.jpeg"</td>`;
-    k+='<td>' + books[i].title + '</td>';
-    k+='<td>' + books[i].author + '</td>';
-    k+=`</tr>`;
-    k+= '</tr>';     
-}
+// for (i = 0; i < books.length; i++) {
+//     k+= '<tr>';
+//     k+=`<td> <img src="${books[i].path}.jpeg"</td>`;
+//     k+='<td>' + books[i].title + '</td>';
+//     k+='<td>' + books[i].author + '</td>';
+//     k+=`</tr>`;
+// }
+books.forEach(el=>{
+        k+='<tr>';
+        k+=`<td> <img src="${el.path}.jpeg"</td>`;
+        k+='<td>' + el.title + '</td>';
+        k+='<td>' + el.author + '</td>';
+        k+=`</tr>`;
+});
 k+='</tbody>';
+console.log(k);
 document.getElementById('tableData').innerHTML = k;
 
