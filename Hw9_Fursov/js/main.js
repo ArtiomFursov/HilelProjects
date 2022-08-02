@@ -1,7 +1,8 @@
 let furniture = [
 	{
 		type: 'desk',
-		price: 27.87
+		price: 27.87,
+        
 	},
 	{
 		type: 'closet',
@@ -15,6 +16,8 @@ let furniture = [
 		type: 'bed',
 		price: 239.99
 	}
+  
+    
 ];
 
 let devices = [
@@ -54,6 +57,16 @@ let appliances = [
 		price: 215.17
 	}
 ];
+
+function setCategories(arr,categoryName){
+ return arr.forEach(el => {
+    el.category=categoryName;
+     console.log(el);
+});
+}
+setCategories(furniture,`furniture`);
+setCategories(devices,`devices`);
+setCategories(appliances,`appliances`);
 let allArr =[].concat(furniture,devices,appliances);
 function Product(category,type,price){
     this.category=category;
@@ -61,12 +74,11 @@ function Product(category,type,price){
     this.price=price;
     this.render = function(){
       return  `<tr>
-	<td><img src="images/${this.type}.svg" alt="bed" width="50" height="50"></td>
+	<td><img src="images/${this.category}/${this.type}.svg" alt="bed" width="50" height="50"></td>
 	<td>${this.type}</td>
 	<td><b>${this.price}USD</b></td>
 </tr>`   
     }
-
 }
 const product = new Product('furniture', 'bed', 239.99);
 // console.log(product.category); // furniture
@@ -74,14 +86,15 @@ const product = new Product('furniture', 'bed', 239.99);
 // console.log(product.price); // 239.99
 // console.log(product.render()); 
 function Category(arr){
+   
 this.arr=arr;
-this.res=function(){
   return arr.map(el=>new Product(el.category,el.type,el.price).render());
- }
+ 
 }
 const categories = new Category(allArr);
-console.log(categories.res());
-document.getElementById(`table`).innerHTML=categories.res().join('');
+
+console.log(categories);
+document.getElementById(`table`).innerHTML=categories.join('');
 
 
 
