@@ -1,15 +1,16 @@
 let HAMBURGER = {  
     price: 0,  
     calories: 0,  
-
+size:{
     small: {  
-     price: 5,  
-     calories: 20  
-    },  
-    large: {  
-     price: 10,  
-     calories: 40  
-    },  
+        price: 5,  
+        calories: 20  
+       },  
+       large: {  
+        price: 10,  
+        calories: 40  
+       },  
+},
     toppings:{ 
         cheese: {  
             price: 1,  
@@ -39,14 +40,30 @@ let HAMBURGER = {
 }; 
 
 class Hamburger{ 
- constructor() { 
-  // this._size = size; 
+ constructor(Hambsize) { 
+  this.Hambsize = Hambsize; 
    this.price = [];
    this.calories = [];
-   // console.log(size) 
-} 
+   if(Hambsize===HAMBURGER.size.small){
+    let arr=[];
+    arr.push(Hambsize);
+    arr.map((item)=>{
+        this.price.push(item.price);
+        this.calories.push(item.calories);
+    });
+   }else if(Hambsize===HAMBURGER.size.large){
+    let arr=[];
+    arr.push(Hambsize);
+    arr.map((item)=>{
+        this.price.push(item.price);
+        this.calories.push(item.calories);
+    });
+ }else{
+   return 'err';
+ }
+}
 addToppings([...args]) { 
-  this.args = args 
+  this.args = args.toppings;
   args.map((item) => this.price.push(item.price)), 
   args.map((item) => this.calories.push(item.calories)) 
 //   console.log(this.price,this.calories) ;     
@@ -69,8 +86,8 @@ getCalories() {
     return 'Calories = '+cal;
 } 
 } 
-let burger = new Hamburger() 
-burger.addToppings([HAMBURGER.small,HAMBURGER.toppings.salad,HAMBURGER.toppings.cheese]) 
+let burger = new Hamburger(HAMBURGER.size.small);
+burger.addToppings([HAMBURGER.toppings.potato,HAMBURGER.toppings.cheese]) 
 burger.addSupplement(HAMBURGER.supplements.mayonnaise);
 console.log(burger.getPrice());
 console.log(burger.getCalories());
