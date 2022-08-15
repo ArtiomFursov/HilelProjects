@@ -46,7 +46,6 @@ event.preventDefault();
  li.appendChild(btnChange);
  list.append(li);
 }
-
 button.addEventListener('click',createElement);
 
 
