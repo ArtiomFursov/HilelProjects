@@ -37,7 +37,6 @@ event.preventDefault();
     }else{
         li.style.cssText='text-decoration:none';
     }
-    
  });
  
 
