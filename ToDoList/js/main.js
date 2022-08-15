@@ -40,7 +40,6 @@ event.preventDefault();
  });
  
 
-
  li.prepend(check);
  li.appendChild(btnDel);
  li.appendChild(btnChange);
