@@ -13,7 +13,7 @@ function upperCase(text){
    
     
    
-   upperCase('Acd');
+   upperCase('Abcd');
 function is_dateString(str) { 
     regexp = /^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d$/; 
       
@@ -45,11 +45,7 @@ vowelCount('The quick brown fox jumps over the lazy dog');
 console.log(vowelCount('The quick brown fox jumps over the lazy dog'));
 function isUSZipCode(str){
 regexp =  /(^\d{5}$)|(^\d{5}-\d{4}$)/;
-if(str.match(regexp)){
-   return true;
-}else{
-    return false;
-}
+return regexp.test(str);
 }
 
 console.log(isUSZipCode('03201-2150'));
