@@ -15,14 +15,26 @@ let peopleArr =[];
               })
         })
     }
+    for (let i = 1; i < 7; i++) {
+        $.ajax({
+            url: `https://swapi.dev/api/planets/?page=${i}`,
+           
+        }).done(function(result){
+            result.results.map(function(el){
+                peopleArr.push(el);
+              })
+        })
+    }
 console.log(peopleArr);
 $(document).ready(function(){
 $('#search').click(function(event){
      event.preventDefault(); 
+     let setSpanClass='class'+Math.random(10);
+ setSpanClass=setSpanClass.replace(/[\s.,%]/g, '');
  if(input.val()!==''){
 peopleArr.map((el)=>{
     if(el.name.toLowerCase()===input.val().toLowerCase()){
-        $('.people').append(`<li id='${el.name}'><h3 class="${el.name}">${el.name}</h3><span class="${el.eye_color}"></span></li>`);  
+        $('.people').append(`<li id='${el.name}'><h3 class="${el.name}">${el.name}</h3><span class="${setSpanClass}"></span></li>`);  
              let str =el.name;
              str=str.split(' ').join('.');
              if(el.homeworld){
@@ -66,7 +78,7 @@ peopleArr.map((el)=>{
         $(`.${str}`).one('click' ,function(event){
             event.preventDefault(); 
                 Object.entries(el).forEach(([key, value]) => {
-                    $(`span.${el.eye_color}`).append(`<p> ${key} : ${value}</p>`);
+                    $(`span.${setSpanClass}`).append(`<p> ${key} : ${value}</p>`);
                     $(`span`).click(function(){
                         $('li').remove();
                     })
