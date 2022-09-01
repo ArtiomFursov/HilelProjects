@@ -17,7 +17,8 @@ let peopleArr =[];
     }
 console.log(peopleArr);
 $(document).ready(function(){
-$('#search').click(function(){
+$('#search').click(function(event){
+     event.preventDefault(); 
  if(input.val()!==''){
 peopleArr.map((el)=>{
     if(el.name.toLowerCase()===input.val().toLowerCase()){
@@ -62,8 +63,8 @@ peopleArr.map((el)=>{
              }
             })
         //    console.log(el);
-        $(`.${str}`).one('click' ,function(){
-          
+        $(`.${str}`).one('click' ,function(event){
+            event.preventDefault(); 
                 Object.entries(el).forEach(([key, value]) => {
                     $(`span.${el.eye_color}`).append(`<p> ${key} : ${value}</p>`);
                     $(`span`).click(function(){
