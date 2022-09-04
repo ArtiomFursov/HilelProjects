@@ -86,3 +86,13 @@ p{
     margin-top: 0;
     padding-bottom: 5px;
 }
+.moreInfo{
+    background: transparent;
+    border: none;
+    color: white;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.moreInfo:hover{
+    color: blue;
+}
