@@ -1,0 +1,44 @@
+.wrapper {
+  padding: 20px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+.input{
+  width: 70%;
+  outline: none;
+  padding-left: 5px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+.container{
+  display: flex;
+}
+.list{
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+  li{
+    display: flex;
+    margin-bottom: 15px;
+    
+  }
+  button{
+    margin-left: 5px;
+    border-radius: 5px;
+    border: none;
+    background: blue;
+    color:#fff;
+    cursor: pointer;
+  }
+}
+.Button{
+  margin-left: 5px;
+  border-radius: 5px;
+  border: none;
+  background: blue;
+  color:#fff;
+  cursor: pointer;
+}
+
