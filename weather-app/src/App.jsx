@@ -48,16 +48,18 @@ class App extends React.Component{
     }
     componentDidMount = async () => {
         let res=[];
-        // let response = await axios(`https://api.openweathermap.org/data/2.5/weather?q=${'Kyiv'}&units=metric&appid=${API_key}`)
-        let response = await axios
-        for (let i = 0; i < cityArr.length; i++) {
-            response=await axios(`https://api.openweathermap.org/data/2.5/weather?q=${cityArr[i]}&units=metric&appid=${API_key}`);
-            res.push(response.data)
-        }
-        this.setState({
-            cities_List:[...this.state.cities_List.concat(res)]
-        })
+        axios.all(cityArr.map((el)=>axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${el}&units=metric&appid=${API_key}`))).then(
+            (data)=>{
+                data.map((el)=>res.push(el.data))
+                this.setState({
+                    cities_List:[...this.state.cities_List.concat(res)]
+                })
+            }
+
+        )
+
     }
+
 
     render(){
 

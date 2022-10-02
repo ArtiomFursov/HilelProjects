@@ -18,9 +18,11 @@ class CitiesList extends Component {
                  </span>
                          <span  className='weatherSpan'>
                    wind speed: {el.wind.speed}s
-                                                  <img src={`http://openweathermap.org/img/wn/${el.weather[0].icon }@2x.png`}></img>
 
                  </span>
+                     <span>
+                         <img src={`http://openweathermap.org/img/wn/${el.weather[0].icon }@2x.png`}></img>
+                    </span>
                      </li>
                  </Link>
              })}
