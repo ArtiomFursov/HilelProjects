@@ -88,7 +88,9 @@ class Page extends Component {
                 </ul>
             );
         }else{
-            return <h2>This request doesn't exist</h2>
+            setTimeout(() => {
+                return <h2>This request doesn't exist</h2>
+            }, 5000);
         }
 
     }
