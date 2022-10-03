@@ -10,7 +10,7 @@ class CitiesList extends Component {
                  return <Link to={'/weather/'+el.name} key={el.id}>
                  <li  className={el.name+' '+joinedDescription}><h2>{el.name}</h2>
                          <span  className='weatherSpan'>
-                         temp: {el.main.temp} º
+                         temp: {Math.round(el.main.temp)} º
                  </span>
                          <span className='weatherSpan' >
                    clouds: {el.weather[0].description}
