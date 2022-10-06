@@ -27,17 +27,16 @@ class Page extends Component {
         })
     }
     render() {
-        function flatten(arr) {
-            if (Array.isArray(arr)) {
-                return arr.reduce(function(done,curr){
-                    return done.concat(flatten(curr));
-                }, []);
-            } else {
-                return arr;
-            }
-        }
         if(this.state.cities_List.length>0){
-
+            function flatten(arr) {
+                if (Array.isArray(arr)) {
+                    return arr.reduce(function(done,curr){
+                        return done.concat(flatten(curr));
+                    }, []);
+                } else {
+                    return arr;
+                }
+            }
             return (
                 <ul className='pageUl'>
                     { this.state.cities_List.map((el)=>{
@@ -84,17 +83,20 @@ class Page extends Component {
                             {el.list.map((el)=>{
                              let random=Math.random(0,10);
                                 if(el.dt_txt.includes('18:00:00')){
-                                    newArr.map((newEl)=>{
-                                        if(el.dt===newEl[0]){
-                                            el.main.temp_min=newEl[1];
-                                            el.main.temp_max=newEl[2];
-                                        }
-                                    })
+
                                     return <div key={random} className='NewPageItem'>
                                         <h3>{el.dt}</h3>
                                         <span className='PageWeatherSpan'>temp:{el.main.temp}º</span>
-                                        <span className='PageWeatherSpan'>temp min:{el.main.temp_min}º</span>
-                                        <span className='PageWeatherSpan'>temp max:{el.main.temp_max}º</span>
+                                        <span className='PageWeatherSpan'>temp min:{newArr.map((newEl)=>{
+                                            if(el.dt===newEl[0]){
+                                              return  newEl[1];
+                                            }
+                                        })}º</span>
+                                        <span className='PageWeatherSpan'>temp max:{newArr.map((newEl)=>{
+                                            if(el.dt===newEl[0]){
+                                            return    newEl[2];
+                                            }
+                                        })}º</span>
                                         <span className='PageWeatherSpan'>wind speed:{el.wind.speed}s</span>
                                         <span className='PageWeatherSpan'>sea level:{el.main.sea_level}</span>
                                         <span className='PageWeatherSpan'>ground level:{el.main.grnd_level}</span>
@@ -109,8 +111,8 @@ class Page extends Component {
             );
         }else{
             setTimeout(() => {
-                return <h2>This request doesn't exist</h2>
-            }, 5000);
+                return <h2 className='notExist'>This request doesn't exist</h2>
+            }, 2000);
         }
 
     }
